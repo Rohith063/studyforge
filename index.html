@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="60-Day Elite Study Planner & Progress Tracker — Master Python, SQL, ML, DSA, Excel & Power BI with structured daily schedules, analytics, and habit tracking.">
+    <meta name="keywords" content="study planner, 60 day challenge, python roadmap, SQL learning, machine learning, data science, progress tracker">
+    <meta name="author" content="StudyForge">
+    <title>StudyForge — 60-Day Elite Growth Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating toggles for Landing & Mode Select pages -->
+    <div class="floating-toggles" id="floating-toggles">
+        <button id="float-sound-toggle" class="float-toggle" aria-label="Toggle sound">
+            <svg class="sound-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            <svg class="sound-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+        <button id="float-theme-toggle" class="float-toggle" aria-label="Toggle theme">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+    </div>
+
+    <!-- ==================== LANDING PAGE ==================== -->
+    <section id="landing" class="page active">
+        <div class="landing-content">
+            <div class="badge animate-fade-in">
+                <span class="badge-dot"></span>
+                <span>60-Day Transformation Engine</span>
+            </div>
+            <h1 class="hero-title animate-fade-in-delay-1">
+                <span class="gradient-text">StudyForge</span>
+                <br>
+                <span class="hero-subtitle-text">Build. Code. Conquer.</span>
+            </h1>
+            <p class="hero-description animate-fade-in-delay-2">
+                An elite, discipline-driven system to transform you from beginner to intermediate in 
+                <strong>Python</strong>, <strong>SQL</strong>, <strong>DSA</strong>, <strong>ML</strong>, 
+                <strong>Excel</strong> & <strong>Power BI</strong> — in exactly 60 days.
+            </p>
+
+            <!-- Animated Counters -->
+            <div class="counter-grid animate-fade-in-delay-2">
+                <div class="counter-card">
+                    <span class="counter-number" data-target="60">0</span>
+                    <span class="counter-label">Days</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" data-target="420">0</span>
+                    <span class="counter-label">Hours of Growth</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" data-target="300">0</span>
+                    <span class="counter-label">Coding Problems</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" data-target="15">0</span>
+                    <span class="counter-label">Projects</span>
+                </div>
+            </div>
+
+            <button id="start-btn" class="cta-button animate-fade-in-delay-3">
+                <span>Begin Your Transformation</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <div class="scroll-indicator animate-fade-in-delay-3">
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MODE SELECTION ==================== -->
+    <section id="mode-select" class="page">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CHOOSE YOUR PATH</span>
+                <h2 class="section-title">Select Your <span class="gradient-text">Study Mode</span></h2>
+                <p class="section-desc">Pick the intensity that matches your schedule. Each mode has a complete 60-day curriculum.</p>
+            </div>
+
+            <div class="mode-cards">
+                <!-- Hardcore Mode -->
+                <div class="mode-card hardcore" data-mode="hardcore">
+                    <div class="mode-card-glow"></div>
+                    <div class="mode-icon">🔥</div>
+                    <div class="mode-badge">MOST POPULAR</div>
+                    <h3>Hardcore Mode</h3>
+                    <p class="mode-hours">7 – 10 Hours / Day</p>
+                    <p class="mode-desc">Full-time dedication. Maximum transformation. For those who want to become unstoppable.</p>
+                    <ul class="mode-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Deep practice sessions</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 5+ coding problems/day</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Weekly projects</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Complete curriculum</li>
+                    </ul>
+                    <button class="mode-select-btn">Select Hardcore</button>
+                </div>
+
+                <!-- Balanced Mode -->
+                <div class="mode-card balanced" data-mode="balanced">
+                    <div class="mode-card-glow"></div>
+                    <div class="mode-icon">⚡</div>
+                    <h3>Balanced Mode</h3>
+                    <p class="mode-hours">4 – 6 Hours / Day</p>
+                    <p class="mode-desc">Smart and steady. Perfect balance of depth and sustainability for solid growth.</p>
+                    <ul class="mode-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Focused sessions</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3+ coding problems/day</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Bi-weekly projects</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Core curriculum</li>
+                    </ul>
+                    <button class="mode-select-btn">Select Balanced</button>
+                </div>
+
+                <!-- Consistency Mode -->
+                <div class="mode-card consistency" data-mode="consistency">
+                    <div class="mode-card-glow"></div>
+                    <div class="mode-icon">🎯</div>
+                    <h3>Consistency Mode</h3>
+                    <p class="mode-hours">1 – 3 Hours / Day</p>
+                    <p class="mode-desc">Slow and steady wins. For busy schedules — build habits that last a lifetime.</p>
+                    <ul class="mode-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Micro-learning blocks</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1-2 coding problems/day</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Monthly project</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Essential curriculum</li>
+                    </ul>
+                    <button class="mode-select-btn">Select Consistency</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN DASHBOARD ==================== -->
+    <section id="dashboard" class="page">
+        <!-- Dashboard Navigation -->
+        <nav class="dash-nav">
+            <div class="dash-nav-brand">
+                <span class="gradient-text nav-logo">StudyForge</span>
+                <span class="mode-indicator" id="mode-indicator"></span>
+            </div>
+            <div class="dash-nav-links">
+                <button class="nav-link active" data-tab="overview"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> Overview</button>
+                <button class="nav-link" data-tab="daily"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Daily Plan</button>
+                <button class="nav-link" data-tab="analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Analytics</button>
+                <button class="nav-link" data-tab="calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Calendar</button>
+                <button class="nav-link" data-tab="roadmap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Roadmaps</button>
+                <button class="nav-link" data-tab="habits"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Habits</button>
+                <button class="nav-link" data-tab="timer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timer</button>
+                <button class="nav-link" data-tab="notes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Notes</button>
+                <button class="nav-link" data-tab="achievements"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg> Badges</button>
+            </div>
+            <div class="dash-nav-actions">
+                <button id="export-btn" class="nav-action-btn" title="Export Data"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                <button id="import-btn" class="nav-action-btn" title="Import Data"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></button>
+                <button id="reset-btn" class="nav-action-btn danger" title="Reset All Progress"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></button>
+                <span class="nav-divider"></span>
+                <button id="sound-toggle" class="nav-action-btn" title="Toggle Sound">
+                    <svg class="sound-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+                    <svg class="sound-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                </button>
+                <button id="theme-toggle" class="nav-action-btn" title="Toggle Theme">
+                    <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <!-- Tab Content Area -->
+        <div class="dash-content">
+            <!-- ===== OVERVIEW TAB ===== -->
+            <div class="tab-content active" id="tab-overview">
+                <!-- Motivation Quote -->
+                <div class="quote-banner" id="quote-banner">
+                    <p class="quote-text" id="quote-text"></p>
+                    <span class="quote-author" id="quote-author"></span>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon streak-fire" id="streak-fire">🔥</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-streak">0</span>
+                            <span class="stat-label">Day Streak</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-completed">0</span>
+                            <span class="stat-label">Days Completed</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-percentage">0%</span>
+                            <span class="stat-label">Completion</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-hours">0h</span>
+                            <span class="stat-label">Hours Studied</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-remaining">60</span>
+                            <span class="stat-label">Days Remaining</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-problems">0</span>
+                            <span class="stat-label">Problems Solved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Ring -->
+                <div class="overview-grid">
+                    <div class="glass-card progress-ring-card">
+                        <h3>Overall Progress</h3>
+                        <div class="progress-ring-container">
+                            <svg class="progress-ring" width="200" height="200">
+                                <circle class="progress-ring-bg" cx="100" cy="100" r="85" />
+                                <circle class="progress-ring-fill" id="progress-ring-fill" cx="100" cy="100" r="85" />
+                            </svg>
+                            <span class="progress-ring-text" id="progress-ring-text">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card skill-progress-card">
+                        <h3>Skill Progress</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Python</span><span id="python-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill python" id="python-bar" style="width:0%"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>SQL</span><span id="sql-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill sql" id="sql-bar" style="width:0%"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>DSA / LeetCode</span><span id="dsa-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill dsa" id="dsa-bar" style="width:0%"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Excel</span><span id="excel-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill excel" id="excel-bar" style="width:0%"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Power BI</span><span id="pbi-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill pbi" id="pbi-bar" style="width:0%"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Machine Learning</span><span id="ml-pct">0%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill ml" id="ml-bar" style="width:0%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Quick View -->
+                <div class="glass-card today-card">
+                    <div class="today-header">
+                        <h3>📌 Today's Focus — <span id="today-day-label">Day 1</span></h3>
+                        <span class="today-date" id="today-date"></span>
+                    </div>
+                    <div class="today-grid" id="today-grid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Weekly Milestone -->
+                <div class="glass-card milestone-card">
+                    <h3>🎯 Current Week Target</h3>
+                    <div id="weekly-milestone"></div>
+                </div>
+            </div>
+
+            <!-- ===== DAILY PLAN TAB ===== -->
+            <div class="tab-content" id="tab-daily">
+                <div class="daily-header">
+                    <button class="day-nav-btn" id="prev-day"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+                    <div class="day-selector">
+                        <h2 id="day-title">Day 1</h2>
+                        <p id="day-date-label"></p>
+                        <div class="day-picker-wrap">
+                            <label for="day-picker">Jump to day:</label>
+                            <input type="number" id="day-picker" min="1" max="60" value="1">
+                        </div>
+                    </div>
+                    <button class="day-nav-btn" id="next-day"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+                </div>
+
+                <!-- Day Schedule -->
+                <div class="day-schedule" id="day-schedule">
+                    <!-- Filled by JS -->
+                </div>
+
+                <!-- Day Completion Checklist -->
+                <div class="glass-card checklist-card">
+                    <h3>✅ Day Completion Checklist</h3>
+                    <div class="checklist" id="day-checklist">
+                        <!-- Filled by JS -->
+                    </div>
+                    <button class="mark-complete-btn" id="mark-day-complete">Mark Day as Complete</button>
+                </div>
+            </div>
+
+            <!-- ===== ANALYTICS TAB ===== -->
+            <div class="tab-content" id="tab-analytics">
+                <div class="section-header">
+                    <h2 class="section-title">📊 Analytics <span class="gradient-text">Dashboard</span></h2>
+                </div>
+                <div class="analytics-grid">
+                    <div class="glass-card chart-card">
+                        <h3>Weekly Completion Rate</h3>
+                        <div class="chart-container">
+                            <canvas id="weekly-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card chart-card">
+                        <h3>Skill Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="skill-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card chart-card wide">
+                        <h3>Daily Streak History</h3>
+                        <div class="chart-container">
+                            <canvas id="streak-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card mistakes-card">
+                        <h3>⚠️ Common Beginner Mistakes to Avoid</h3>
+                        <div class="mistakes-list">
+                            <div class="mistake-item"><span class="mistake-num">01</span><p><strong>Tutorial Hell</strong> — Don't just watch tutorials. Code along, then build without guides.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">02</span><p><strong>Skipping Fundamentals</strong> — Loops, functions, and logic are your foundation. Don't rush past them.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">03</span><p><strong>Not Practicing Daily</strong> — Consistency beats intensity. Code every single day.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">04</span><p><strong>Copy-Pasting Code</strong> — Type every line yourself. Muscle memory matters.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">05</span><p><strong>Avoiding Errors</strong> — Bugs are teachers. Debug actively instead of starting over.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">06</span><p><strong>No Projects</strong> — Knowledge without application is forgotten. Build things constantly.</p></div>
+                            <div class="mistake-item"><span class="mistake-num">07</span><p><strong>Comparing with Others</strong> — Focus on your own progress. You're competing with yesterday's you.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CALENDAR TAB ===== -->
+            <div class="tab-content" id="tab-calendar">
+                <div class="section-header">
+                    <h2 class="section-title">📅 <span class="gradient-text">Calendar</span> View</h2>
+                </div>
+                <div class="calendar-controls">
+                    <button id="cal-prev" class="cal-nav">&lt;</button>
+                    <h3 id="cal-month-label"></h3>
+                    <button id="cal-next" class="cal-nav">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    <!-- Filled by JS -->
+                </div>
+                <div class="calendar-legend">
+                    <span class="legend-item"><span class="legend-dot completed"></span> Completed</span>
+                    <span class="legend-item"><span class="legend-dot today"></span> Today</span>
+                    <span class="legend-item"><span class="legend-dot upcoming"></span> Upcoming</span>
+                    <span class="legend-item"><span class="legend-dot missed"></span> Missed</span>
+                </div>
+            </div>
+
+            <!-- ===== ROADMAPS TAB ===== -->
+            <div class="tab-content" id="tab-roadmap">
+                <div class="section-header">
+                    <h2 class="section-title">🗺️ Learning <span class="gradient-text">Roadmaps</span></h2>
+                </div>
+                <div class="roadmap-tabs">
+                    <button class="roadmap-tab active" data-roadmap="python">Python</button>
+                    <button class="roadmap-tab" data-roadmap="leetcode">LeetCode / DSA</button>
+                    <button class="roadmap-tab" data-roadmap="sql">SQL</button>
+                    <button class="roadmap-tab" data-roadmap="excel">Excel & Power BI</button>
+                    <button class="roadmap-tab" data-roadmap="ml">Machine Learning</button>
+                </div>
+                <div class="roadmap-content" id="roadmap-content">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- ===== HABITS TAB ===== -->
+            <div class="tab-content" id="tab-habits">
+                <div class="section-header">
+                    <h2 class="section-title">🧠 Habit <span class="gradient-text">Tracker</span></h2>
+                    <p class="section-desc">Track your daily discipline habits. Consistency is everything.</p>
+                </div>
+                <div class="habits-day-header">
+                    <button class="day-nav-btn" id="habit-prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+                    <h3 id="habit-day-label">Day 1</h3>
+                    <button class="day-nav-btn" id="habit-next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+                </div>
+                <div class="habits-grid" id="habits-grid">
+                    <!-- Filled by JS -->
+                </div>
+                <div class="glass-card habit-streak-card">
+                    <h3>Habit Completion Rate</h3>
+                    <div class="habit-stats" id="habit-stats"></div>
+                </div>
+            </div>
+
+            <!-- ===== TIMER TAB ===== -->
+            <div class="tab-content" id="tab-timer">
+                <div class="section-header">
+                    <h2 class="section-title">⏱️ Pomodoro <span class="gradient-text">Timer</span></h2>
+                    <p class="section-desc">Stay focused with timed study sessions.</p>
+                </div>
+                <div class="timer-card glass-card">
+                    <div class="timer-display">
+                        <svg class="timer-ring" width="280" height="280">
+                            <circle class="timer-ring-bg" cx="140" cy="140" r="120" />
+                            <circle class="timer-ring-fill" id="timer-ring-fill" cx="140" cy="140" r="120" />
+                        </svg>
+                        <span class="timer-text" id="timer-text">25:00</span>
+                    </div>
+                    <div class="timer-controls">
+                        <button class="timer-btn" id="timer-start">▶ Start</button>
+                        <button class="timer-btn" id="timer-pause" disabled>⏸ Pause</button>
+                        <button class="timer-btn" id="timer-reset">↺ Reset</button>
+                    </div>
+                    <div class="timer-presets">
+                        <button class="timer-preset active" data-minutes="25">25 min</button>
+                        <button class="timer-preset" data-minutes="45">45 min</button>
+                        <button class="timer-preset" data-minutes="60">60 min</button>
+                        <button class="timer-preset" data-minutes="5">5 min break</button>
+                        <button class="timer-preset" data-minutes="15">15 min break</button>
+                    </div>
+                    <div class="pomodoro-stats">
+                        <div class="pomo-stat"><span class="pomo-stat-value" id="pomo-count">0</span><span class="pomo-stat-label">Sessions Today</span></div>
+                        <div class="pomo-stat"><span class="pomo-stat-value" id="pomo-total-time">0m</span><span class="pomo-stat-label">Focus Time</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NOTES TAB ===== -->
+            <div class="tab-content" id="tab-notes">
+                <div class="section-header">
+                    <h2 class="section-title">📝 Daily <span class="gradient-text">Notes</span></h2>
+                    <p class="section-desc">Journal your learnings, reflections, and breakthroughs.</p>
+                </div>
+                <div class="notes-day-header">
+                    <button class="day-nav-btn" id="notes-prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+                    <h3 id="notes-day-label">Day 1 Notes</h3>
+                    <button class="day-nav-btn" id="notes-next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+                </div>
+                <div class="glass-card notes-card">
+                    <textarea id="notes-textarea" placeholder="What did you learn today? What was challenging? What will you improve tomorrow?"></textarea>
+                    <button class="save-notes-btn" id="save-notes">💾 Save Notes</button>
+                </div>
+            </div>
+
+            <!-- ===== ACHIEVEMENTS TAB ===== -->
+            <div class="tab-content" id="tab-achievements">
+                <div class="section-header">
+                    <h2 class="section-title">🏆 Achievement <span class="gradient-text">Badges</span></h2>
+                    <p class="section-desc">Unlock badges by hitting milestones. Earn them all!</p>
+                </div>
+                <div class="badges-grid" id="badges-grid">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Import file input (hidden) -->
+    <input type="file" id="import-file" accept=".json" style="display:none">
+
+    <!-- Toast container -->
+    <div id="toast-container"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
