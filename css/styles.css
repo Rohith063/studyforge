@@ -586,6 +586,7 @@ body:not(.sound-enabled) .sound-off { display:block; }
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .quote-banner::before {
     content: '"';

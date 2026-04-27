@@ -318,12 +318,42 @@ function initHamburger() {
     });
 }
 
+// ─── Quote Rotation ────────────────────────────────────────────────
+let quoteIndex = Math.floor(Math.random() * QUOTES.length);
+let quoteInterval = null;
+
+function startQuoteRotation() {
+    // Show first quote immediately
+    showQuote(quoteIndex);
+
+    // Clear any existing interval
+    if (quoteInterval) clearInterval(quoteInterval);
+
+    // Rotate every 15 seconds
+    quoteInterval = setInterval(() => {
+        const banner = document.getElementById('quote-banner');
+        // Fade out
+        banner.style.opacity = '0';
+        banner.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % QUOTES.length;
+            showQuote(quoteIndex);
+            // Fade in
+            banner.style.opacity = '1';
+            banner.style.transform = 'scale(1)';
+        }, 400);
+    }, 15000);
+}
+
+function showQuote(idx) {
+    document.getElementById('quote-text').textContent = QUOTES[idx].text;
+    document.getElementById('quote-author').textContent = `— ${QUOTES[idx].author}`;
+}
+
 // ─── Overview Tab ──────────────────────────────────────────────────
 function renderOverview() {
-    // Quote
-    const quoteIdx = (new Date().getDate() + new Date().getMonth()) % QUOTES.length;
-    document.getElementById('quote-text').textContent = QUOTES[quoteIdx].text;
-    document.getElementById('quote-author').textContent = `— ${QUOTES[quoteIdx].author}`;
+    // Start rotating quotes
+    startQuoteRotation();
 
     // Stats
     const completedCount = Object.keys(state.completedDays).length;
